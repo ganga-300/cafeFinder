@@ -1,5 +1,6 @@
 import React from 'react';
 import './navbar.css';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -7,10 +8,10 @@ function Navbar() {
       <nav className='navbar'>
         <div className="logo">Bean Scene</div>
         <ul className="nav-links">
-          <li>Home</li>
-          <li>Menu</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
+        <li><Link to='/'>Home</Link></li>  
+        <li>Menu</li>
+        <li><Link to='/About'>About Us</Link></li>  
+        <li><Link to='/Contact'>Contact</Link></li>  
         </ul>
         <div className="nav-buttons">
           <button className="signin-btn">Sign In</button>
@@ -18,18 +19,6 @@ function Navbar() {
         </div>
       </nav>
 
-      <section className="hero-section">
-        <div className="overlay"></div>
-        <div className="hero-content">
-          <h4>We've got your morning covered with</h4>
-          <h1>Coffee</h1>
-          <p>
-            It is best to start your day with a cup of coffee. Discover the best flavours
-            coffee you will ever have. We provide the best for our customers.
-          </p>
-          <button className="order-now-button">Order Now</button>
-        </div>
-      </section>
     </>
   );
 }

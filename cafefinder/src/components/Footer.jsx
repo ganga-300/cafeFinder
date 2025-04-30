@@ -13,7 +13,7 @@ function Footer() {
     <div>
         <h3>Quick links</h3>
         <ul>
-            <li><a>Home</a></li>
+            <li><a href='#'>Home</a></li>
             <li><a>About us</a></li>
             <li><a>Contact</a></li>
             <li><a>Privacy policy</a></li>

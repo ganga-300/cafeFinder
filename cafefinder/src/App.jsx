@@ -1,20 +1,22 @@
 import Navbar from './components/Navbar'
-import CoffeeCarousel from './components/CoffeeCarousel'
-import WhyChooseUs from './components/WhyChooseUs'
-import TestimonialCarousel from './components/TestimonialCarousel'
+import Home from './components/Home'
+import About from './components/About'
 import Footer from './components/Footer'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <><Navbar/><Home /></>
+  },
+  {
+    path: '/About',
+    element: <><Navbar/> <About/> <Footer /></>
+  }
+])
+
 function App() {
-
-
-  return (
-    <>
-      <Navbar/>
-      <CoffeeCarousel/>
-      <WhyChooseUs/>
-      <TestimonialCarousel/>
-      <Footer/>
-    </>
-  )
+  return <RouterProvider router={router} />
 }
 
 export default App
