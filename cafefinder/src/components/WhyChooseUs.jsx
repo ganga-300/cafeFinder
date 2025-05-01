@@ -19,12 +19,12 @@ function WhyChooseUs() {
           <p>Only the finest beans, roasted to perfection for you.</p>
         </div>
         <div className="feature-card">
-        <FaGift size={50} />  
+        <FaGift size={50}  color='black'/>  
           <h3>Exciting Offers</h3>
           <p>Unbeatable deals and exclusive combos daily!</p>
         </div>
         <div className="feature-card">
-          <FaUtensils size={50} />
+          <FaUtensils size={50} color='black'/>
           <h3>Explore Menus</h3>
           <p>Diverse menus curated for every coffee lover's taste.</p>
         </div>

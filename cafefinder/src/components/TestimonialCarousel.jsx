@@ -5,22 +5,22 @@ const testimonials = [
   {
     name: 'Alice Johnson',
     review: 'The coffee is absolutely amazing! Best café in town!',
-    image: '/images/user1.jpg'
-  },
-  {
-    name: 'David Smith',
-    review: 'A cozy atmosphere and incredible coffee flavors.',
-    image: '/images/user2.jpg'
+    image: '/review1.avif'
   },
   {
     name: 'Sophie Lee',
+    review: 'A cozy atmosphere and incredible coffee flavors.',
+    image: '/review2.avif'
+  },
+  {
+    name: 'David Smith',
     review: 'Fast service and great taste! I love their espresso.',
-    image: '/images/user3.jpg'
+    image: '/review.avif'
   },
   {
     name: 'Mark Brown',
     review: 'The best place to chill and work while sipping great coffee.',
-    image: '/images/user4.jpg'
+    image: '/review3.avif'
   },
 ];
 
