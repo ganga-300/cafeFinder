@@ -10,20 +10,19 @@
     color: #5b3a29;
     margin-bottom: 40px;
   }
-  
-  /* SCROLLABLE HORIZONTALLY */
+
   .testimonial-scroll-container {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 30px;
     padding-bottom: 20px;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
   }
   
   .testimonial-scroll-container::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
+    display: none; 
   }
   
   .testimonial-card {

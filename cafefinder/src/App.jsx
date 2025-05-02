@@ -5,6 +5,8 @@ import Footer from './components/Footer'
 import Contact from './components/Contact'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
+
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -12,7 +14,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/About',
-    element: <><Navbar/> <About/> <Footer /></>
+    element: <><Navbar/> <About/> </>
   },
   {
     path : '/Contact',
