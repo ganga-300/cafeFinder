@@ -1,8 +1,10 @@
+
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #1c1b18;
-  color: #e9e6e3;
+  background: #f8f8f8;
+  color: #1c1b18;
 }
 
 .contact {
@@ -20,8 +22,8 @@ body {
   width: 100%;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
-  background: linear-gradient(145deg, #2e2b28, #1c1b18);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
 }
 
 .form, .info {
@@ -30,7 +32,7 @@ body {
 }
 
 .form {
-  background: #1f1e1c;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,13 +40,13 @@ body {
 
 .form h1 {
   font-size: 2.8rem;
-  color: #d8c3a5;
+  color: #252422;
   margin-bottom: 12px;
 }
 
 .form p {
   font-size: 1rem;
-  color: #a99985;
+  color: #6c6b68;
   margin-bottom: 16px;
 }
 
@@ -53,11 +55,11 @@ body {
   width: 100%;
   padding: 14px 18px;
   margin-bottom: 20px;
-  background-color: #2d2a27;
-  border: 1px solid #3e3b38;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
   border-radius: 12px;
   font-size: 1rem;
-  color: #f5f0eb;
+  color: #252422;
   outline: none;
   transition: border 0.3s;
 }
@@ -65,6 +67,7 @@ body {
 .form input:focus,
 .form textarea:focus {
   border-color: #d8a46f;
+  background-color: #fff;
 }
 
 .form input::placeholder {
@@ -73,7 +76,7 @@ body {
 
 .submit {
   background: linear-gradient(to right, #a47148, #d8a46f);
-  color: #1c1b18;
+  color: #ffffff;
   font-weight: 600;
   padding: 14px;
   border: none;
@@ -89,27 +92,27 @@ body {
 }
 
 .info {
-  background-color: #292621;
+  background-color: #f7f6f4;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #e9e6e3;
+  color: #333;
 }
 
 .info h2 {
   font-size: 2rem;
   margin-bottom: 16px;
-  color: #f2c791;
+  color: #a47148;
 }
 
 .info p {
-  background: #1c1b18;
+  background: #ffffff;
   padding: 10px 14px;
   border-left: 4px solid #d8a46f;
   border-radius: 8px;
   margin-bottom: 14px;
   font-size: 0.95rem;
-  color: #cfcac4;
+  color: #44403c;
 }
 
 @media (max-width: 768px) {

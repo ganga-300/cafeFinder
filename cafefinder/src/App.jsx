@@ -4,6 +4,7 @@ import About from './components/About'
 import Footer from './components/Footer'
 import Contact from './components/Contact'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Blogs from './components/Blogs'
 
 
 
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path : '/Contact',
     element :<><Navbar/> <Contact/> <Footer/></> 
+  },
+  {
+    path : '/Blogs',
+    element:<> <Navbar/> <Blogs/> </>
   }
   
 ])
