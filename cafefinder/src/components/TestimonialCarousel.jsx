@@ -22,6 +22,18 @@ const testimonials = [
     review: 'The best place to chill and work while sipping great coffee.',
     image: '/review3.avif'
   },
+  {
+    name: 'Mark Brown',
+    review: 'The best place to chill and work while sipping great coffee.',
+    image: '/review3.avif'
+  },
+  {
+    name: 'Alice Johnson',
+    review: 'The coffee is absolutely amazing! Best café in town!',
+    image: '/review1.avif'
+  },
+  
+
 ];
 
 function TestimonialCarousel() {

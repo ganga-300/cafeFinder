@@ -28,7 +28,24 @@ function CoffeeCarousel() {
       description: 'Coffee 50% | Milk 50%',
       price: '8.50',
     },
-    
+    {
+      image: '/a9345bb5570ed0d9da242130d2f04691.jpg',
+      name: 'Expresso',
+      description: 'Coffee 50% | Milk 50%',
+      price: '8.50',
+    },
+    {
+      image: '/a9345bb5570ed0d9da242130d2f04691.jpg',
+      name: 'Expresso',
+      description: 'Coffee 50% | Milk 50%',
+      price: '8.50',
+    },
+    {
+      image: '/a9345bb5570ed0d9da242130d2f04691.jpg',
+      name: 'Expresso',
+      description: 'Coffee 50% | Milk 50%',
+      price: '8.50',
+    },
   ];
 
   return (
