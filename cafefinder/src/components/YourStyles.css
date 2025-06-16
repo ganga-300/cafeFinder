@@ -78,3 +78,25 @@
     background-color: #e5b825;
   }
   
+
+  @media (max-width: 768px) {
+    .features-grid {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .feature-card {
+      width: 90%;
+      margin: 0 auto;
+    }
+  
+    .section-title {
+      font-size: 28px;
+    }
+  
+    .join-btn {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  }
+  

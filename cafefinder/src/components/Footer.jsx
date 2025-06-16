@@ -7,8 +7,8 @@ function Footer() {
     <footer className='footer'>
     <div className="footer-columns">
     <div className='company-brand'>
-        <h2>Cafe scene</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto praesentium perspiciatis autem, cupiditate, minima harum odit neque cum tempora excepturi et assumenda quae explicabo nesciunt facilis hic obcaecati quasi libero!</p>
+        <h2>Bean scene</h2>
+        <p>Lorem ipsum dolor sit amet,abo nesciunt facilis hic obcaecati quasi libero!</p>
     </div>
     <div>
         <h3>Quick links</h3>

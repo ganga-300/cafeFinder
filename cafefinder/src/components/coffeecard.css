@@ -85,3 +85,14 @@
     background-color: #e5b825;
   }
   
+
+  @media (max-width: 768px) {
+    .coffee-card {
+      min-width: 90%;
+    }
+  
+    .coffee-image {
+      height: 180px;
+    }
+  }
+  

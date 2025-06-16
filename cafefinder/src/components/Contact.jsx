@@ -19,10 +19,10 @@ function Contact() {
             </div>
             <div className='info'>
                 <h2>Info</h2>
-                <p>Email : dvuifnhviu</p>
-                <p>7067909690</p>
-                <p>Address</p>
-                <p>Time</p>
+                <p>Email : Beanscene@gmail.com</p>
+                <p>Phone No. :7067909690</p>
+                <p>Address :Bangalore </p>
+                
             </div>
         </div>
 

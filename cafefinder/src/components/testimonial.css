@@ -60,3 +60,14 @@
     font-weight: bold;
   }
   
+  @media (max-width: 768px) {
+    .testimonial-card {
+      flex: 0 0 90%;
+      padding: 20px 15px;
+    }
+  
+    .testimonial-title {
+      font-size: 28px;
+    }
+  }
+  
