@@ -12,7 +12,6 @@ function Navbar() {
 
         <ul className="nav-links">
         <li><Link to='/'>Home</Link></li>  
-        <li><Link to="#">Menu</Link></li>
         <li><Link to='/About'>About Us</Link></li>  
         <li><Link to='/Contact'>Contact</Link></li> 
         <li><Link to='/Blogs'>Blogs</Link></li> 
@@ -21,7 +20,8 @@ function Navbar() {
         <input
         type="text"
         className="search-bar"
-        placeholder="Search cafes..."/>
+        placeholder="Search cafes..." 
+        id="search-bar"/>
 
         
         <div className="nav-buttons">

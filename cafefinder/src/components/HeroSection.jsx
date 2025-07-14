@@ -2,6 +2,15 @@ import React from 'react';
 import './herosection.css';
 
 function HeroSection() {
+
+  const handleOrderClick = () => {
+    const searchBar = document.getElementById('search-bar');
+    if (searchBar) {
+      searchBar.scrollIntoView({ behavior: 'smooth' });
+      searchBar.focus();
+    }
+  };
+
   return (
     <section className="hero-section">
       <div className="overlay"></div>
@@ -12,7 +21,7 @@ function HeroSection() {
           It is best to start your day with a cup of coffee. Discover the best flavours
           coffee you will ever have. We provide the best for our customers.
         </p>
-        <button className="order-now-button">Order Now</button>
+        <button className="order-now-button" onClick={handleOrderClick}>Order Now</button>
       </div>
     </section>
   );
