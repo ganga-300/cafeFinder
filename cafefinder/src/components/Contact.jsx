@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from "lucide-react"
-import "./contact.css"
+// import "./contact.css"
 
 function Contact() {
   const [formData, setFormData] = useState({
