@@ -2,10 +2,10 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import About from './components/About'
 import Footer from './components/Footer'
-import Contact from './components/Contact'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Blogs from './components/Blogs'
 import FAQs from './components/FAQs'
+import Booking from './components/Booking'
 
 
 
@@ -18,13 +18,14 @@ const router = createBrowserRouter([
     path: '/About',
     element: <><Navbar/> <About/> <FAQs/></>
   },
-  {
-    path : '/Contact',
-    element :<><Navbar/> <Contact/> <Footer/></> 
-  },
+
   {
     path : '/Blogs',
-    element:<> <Navbar/> <Blogs/> </>
+    element:<> <Navbar/> <Blogs/> <Footer/></>
+  },
+  {
+    path : '/Book-a-table',
+    element:<> <Navbar/> <Booking/> </>
   }
   
 ])

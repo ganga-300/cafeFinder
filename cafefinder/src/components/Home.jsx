@@ -1,5 +1,5 @@
 
-import CoffeeCarousel from './CoffeeCarousel'
+
 import WhyChooseUs from './WhyChooseUs'
 import TestimonialCarousel from './TestimonialCarousel'
 import Footer from './Footer'
@@ -9,7 +9,6 @@ function Home() {
   return (
     <>
     <HeroSection/>
-    <CoffeeCarousel />
     <WhyChooseUs />
     <TestimonialCarousel />
     <Footer />

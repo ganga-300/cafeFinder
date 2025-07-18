@@ -15,6 +15,7 @@ function Navbar() {
         <li><Link to='/About'>About Us</Link></li>  
         <li><Link to='/Contact'>Contact</Link></li> 
         <li><Link to='/Blogs'>Blogs</Link></li> 
+        <li><Link to='/Book-a-table'>Book a table</Link></li> 
         </ul>
 
         <input
