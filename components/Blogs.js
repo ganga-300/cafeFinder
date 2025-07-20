@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+'use client'
+import { useState } from 'react'
+import Image from 'next/image'
 
 const blogData = [
   {
@@ -48,67 +50,62 @@ const blogData = [
     date: "25 Apr 2025",
     image: "/brewing.jpg",
     fullContent: "There are numerous ways to brew coffee, each method producing its own unique flavor profile. This blog explores popular brewing techniques such as French Press, Aeropress, and pour-over, and explains which method is best for different tastes."
-  },
-  {
-    title: "How to Pair Coffee with Food",
-    description: "Just like wine, coffee can be paired with food to enhance both the flavors of the dish and the drink.",
-    author: "Eva Smith",
-    date: "28 Apr 2025",
-    image: "/pairing.jpg",
-    fullContent: "Pairing coffee with food can elevate the dining experience. This blog offers tips on pairing different coffee types with various foods, from pastries to savory dishes, for the perfect combination."
   }
- 
-];
+]
 
-export default function BlogPage() {
-  const [expandedBlogIndex, setExpandedBlogIndex] = useState(null);
+export default function Blogs() {
+  const [expandedBlogIndex, setExpandedBlogIndex] = useState(null)
 
   const toggleReadMore = (index) => {
-    if (expandedBlogIndex === index) {
-      setExpandedBlogIndex(null);
-    } else {
-      setExpandedBlogIndex(index);
-    }
-  };
+    setExpandedBlogIndex(index === expandedBlogIndex ? null : index)
+  }
 
   return (
-    <div className="py-16 px-20 font-sans bg-white">
-      <div className="w-full h-80 bg-blog-hero bg-cover bg-center text-gray-100 text-center py-16 px-5 mt-24">
-        <h2 className="text-4xl font-bold">Discover Our Latest Insights</h2>
-        <p className="text-lg mt-3">Discover rich and aromatic stories about coffee culture, brewing techniques, and bean-to-cup journeys.</p>
-      </div>
+    <div className="py-16 px-4 md:px-20 font-sans bg-white">
+      <div className="container mx-auto">
+        {/* Hero Section */}
+        <div className="w-full h-80 bg-blog-hero bg-cover bg-center text-gray-100 text-center py-16 px-5 mt-24 rounded-2xl">
+          <h2 className="text-4xl font-bold font-playfair">Discover Our Latest Insights</h2>
+          <p className="text-lg mt-3 font-poppins">Discover rich and aromatic stories about coffee culture, brewing techniques, and bean-to-cup journeys.</p>
+        </div>
 
-     
-      <h1 className="text-3xl font-bold mb-10 mt-20">Recent blog posts</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {blogData.map((blog, index) => (
-          <div key={index} className="bg-gray-50 rounded-xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-2xl">
-            <div className="w-full h-48 bg-gray-300">
-              <img 
-                src={blog.image} 
-                alt={`${blog.title} - Coffee blog article image`} 
-                className="w-full h-full object-cover"
-                loading="lazy"
-                onError={(e) => {
-                  e.target.src = 'https://images.pexels.com/photos/324028/pexels-photo-324028.jpeg?auto=compress&cs=tinysrgb&w=600';
-                }}
-              />
-            </div>
-            <div className="p-5">
-              <h3 className="my-0 mb-3 text-lg font-semibold">{blog.title}</h3>
-              <p className="text-sm text-gray-600 mb-3">{blog.description}</p>
-              <div className="text-xs text-gray-500">
-                <span>{blog.author}</span> • <span>{blog.date}</span>
+        {/* Blog Posts */}
+        <h1 className="text-3xl font-bold mb-10 mt-20 font-playfair">Recent Blog Posts</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {blogData.map((blog, index) => (
+            <div key={index} className="bg-gray-50 rounded-xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-2xl">
+              <div className="relative w-full h-48">
+                <Image
+                  src={blog.image}
+                  alt={`${blog.title} - Coffee blog article image`}
+                  fill
+                  className="object-cover"
+                  onError={(e) => {
+                    e.target.src = 'https://images.pexels.com/photos/324028/pexels-photo-324028.jpeg?auto=compress&cs=tinysrgb&w=600'
+                  }}
+                />
               </div>
-            
-              <div className="text-orange-500 cursor-pointer font-semibold mt-3 hover:underline" onClick={() => toggleReadMore(index)}>
-                {expandedBlogIndex === index ? "Read Less" : "Read More"}
+              <div className="p-5">
+                <h3 className="mb-3 text-lg font-semibold font-playfair">{blog.title}</h3>
+                <p className="text-sm text-gray-600 mb-3 font-poppins">{blog.description}</p>
+                <div className="text-xs text-gray-500 font-poppins">
+                  <span>{blog.author}</span> • <span>{blog.date}</span>
+                </div>
+                
+                <div 
+                  className="text-orange-500 cursor-pointer font-semibold mt-3 hover:underline font-poppins" 
+                  onClick={() => toggleReadMore(index)}
+                >
+                  {expandedBlogIndex === index ? "Read Less" : "Read More"}
+                </div>
+                {expandedBlogIndex === index && (
+                  <p className="mt-3 text-sm text-gray-700 font-poppins">{blog.fullContent}</p>
+                )}
               </div>
-              {expandedBlogIndex === index && <p className="mt-3 text-sm text-gray-700">{blog.fullContent}</p>}
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
-  );
+  )
 }

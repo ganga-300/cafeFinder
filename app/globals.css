@@ -2,25 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Image optimization and responsive behavior */
-@layer base {
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
-/* Lazy loading placeholder */
-@layer components {
-  .image-placeholder {
-    @apply bg-gray-200 animate-pulse;
-  }
-  
-  .image-error {
-    @apply bg-gray-100 flex items-center justify-center text-gray-400 text-sm;
-  }
-}
-
 /* Custom scrollbar styles */
 @layer utilities {
   .scrollbar-hide {
@@ -38,5 +19,18 @@
   
   .img-contain {
     @apply w-full h-auto object-contain;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Image optimization and responsive behavior */
+@layer base {
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
