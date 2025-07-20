@@ -42,7 +42,15 @@ function TestimonialCarousel() {
       <div className="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-5 scrollbar-hide">
         {testimonials.map((testimonial, index) => (
           <div className="flex-none w-80 bg-white rounded-2xl p-8 shadow-lg text-center snap-center transition-transform duration-300 hover:scale-105" key={index}>
-            <img src={testimonial.image} alt={testimonial.name} className="w-20 h-20 object-cover rounded-full mb-5 mx-auto" />
+            <img 
+              src={testimonial.image} 
+              alt={`${testimonial.name} - Customer testimonial photo`} 
+              className="w-20 h-20 object-cover rounded-full mb-5 mx-auto border-2 border-golden"
+              loading="lazy"
+              onError={(e) => {
+                e.target.src = 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=200';
+              }}
+            />
             <p className="text-base text-gray-500 mb-4">"{testimonial.review}"</p>
             <h4 className="text-lg text-coffee-brown font-bold">- {testimonial.name}</h4>
           </div>

@@ -10,8 +10,17 @@ function HeroSection() {
   };
 
   return (
-    <section className="w-full h-screen bg-hero-pattern bg-no-repeat bg-center bg-cover relative">
+    <section className="w-full h-screen bg-hero-pattern bg-no-repeat bg-center bg-cover relative" role="banner">
       <div className="absolute top-0 left-0 w-full h-full bg-black/30 z-10"></div>
+      <img 
+        src="/capstonemain.png" 
+        alt="Coffee shop hero background - warm and inviting atmosphere" 
+        className="absolute inset-0 w-full h-full object-cover -z-10"
+        loading="eager"
+        onError={(e) => {
+          e.target.style.display = 'none';
+        }}
+      />
       <div className="absolute top-1/3 left-1/10 text-white max-w-2xl z-20 px-4">
         <h4 className="text-xl mb-2">We've got your morning covered with</h4>
         <h1 className="text-6xl md:text-8xl font-great-vibes">Coffee</h1>

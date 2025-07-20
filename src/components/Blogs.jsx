@@ -84,7 +84,15 @@ export default function BlogPage() {
         {blogData.map((blog, index) => (
           <div key={index} className="bg-gray-50 rounded-xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-2xl">
             <div className="w-full h-48 bg-gray-300">
-              <img src={blog.image} alt={blog.title} className="w-full h-full object-cover" />
+              <img 
+                src={blog.image} 
+                alt={`${blog.title} - Coffee blog article image`} 
+                className="w-full h-full object-cover"
+                loading="lazy"
+                onError={(e) => {
+                  e.target.src = 'https://images.pexels.com/photos/324028/pexels-photo-324028.jpeg?auto=compress&cs=tinysrgb&w=600';
+                }}
+              />
             </div>
             <div className="p-5">
               <h3 className="my-0 mb-3 text-lg font-semibold">{blog.title}</h3>

@@ -43,8 +43,12 @@ function TopPicks() {
             <div className="h-48 overflow-hidden">
               <img 
                 src={item.image} 
-                alt={item.name}
+                alt={`${item.name} - ${item.description}`}
                 className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                loading="lazy"
+                onError={(e) => {
+                  e.target.src = 'https://images.pexels.com/photos/324028/pexels-photo-324028.jpeg?auto=compress&cs=tinysrgb&w=600';
+                }}
               />
             </div>
             <div className="p-6">
