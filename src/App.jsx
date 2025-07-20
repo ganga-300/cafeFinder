@@ -2,6 +2,7 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import About from './components/About'
 import Footer from './components/Footer'
+import Contact from './components/Contact'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Blogs from './components/Blogs'
 import FAQs from './components/FAQs'
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path : '/Book-a-table',
     element:<> <Navbar/> <Booking/> </>
+  },
+  {
+    path: '/Contact',
+    element: <><Navbar/> <Contact/> <Footer/></>
   }
   
 ])

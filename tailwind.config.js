@@ -24,6 +24,9 @@ export default {
       backgroundImage: {
         'hero-pattern': "url('/capstonemain.png')",
         'blog-hero': "url('/Background-blogs.jpg')",
+      },
+      spacing: {
+        '1/10': '10%',
       }
     },
   },
