@@ -173,6 +173,7 @@ export default function Booking() {
                 className={`py-3 px-4 border-2 ${errors.date ? 'border-red-500 bg-red-50' : 'border-green-200'} rounded-xl text-base transition-all duration-300 bg-gray-50 text-gray-800 focus:outline-none focus:border-green-600 focus:shadow-lg focus:bg-white font-poppins`}
               />
               {errors.date && <span className="text-red-500 text-xs mt-1 font-poppins">{errors.date}</span>}
+              }
             </div>
 
             <div className="flex flex-col">
@@ -192,6 +193,7 @@ export default function Booking() {
                 ))}
               </select>
               {errors.time && <span className="text-red-500 text-xs mt-1 font-poppins">{errors.time}</span>}
+              }
             </div>
           </div>
 
@@ -238,6 +240,7 @@ export default function Booking() {
                 className={`py-3 px-4 border-2 ${errors.name ? 'border-red-500 bg-red-50' : 'border-green-200'} rounded-xl text-base transition-all duration-300 bg-gray-50 text-gray-800 placeholder-green-400 focus:outline-none focus:border-green-600 focus:shadow-lg focus:bg-white font-poppins`}
               />
               {errors.name && <span className="text-red-500 text-xs mt-1 font-poppins">{errors.name}</span>}
+              }
             </div>
 
             <div className="flex flex-col">
@@ -252,6 +255,7 @@ export default function Booking() {
                 className={`py-3 px-4 border-2 ${errors.phone ? 'border-red-500 bg-red-50' : 'border-green-200'} rounded-xl text-base transition-all duration-300 bg-gray-50 text-gray-800 placeholder-green-400 focus:outline-none focus:border-green-600 focus:shadow-lg focus:bg-white font-poppins`}
               />
               {errors.phone && <span className="text-red-500 text-xs mt-1 font-poppins">{errors.phone}</span>}
+              }
             </div>
           </div>
 
@@ -267,6 +271,7 @@ export default function Booking() {
               className={`py-3 px-4 border-2 ${errors.email ? 'border-red-500 bg-red-50' : 'border-green-200'} rounded-xl text-base transition-all duration-300 bg-gray-50 text-gray-800 placeholder-green-400 focus:outline-none focus:border-green-600 focus:shadow-lg focus:bg-white font-poppins`}
             />
             {errors.email && <span className="text-red-500 text-xs mt-1 font-poppins">{errors.email}</span>}
+            }
           </div>
 
           <div className="flex flex-col">
