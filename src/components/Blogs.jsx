@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './Blogs.css';
 
 const blogData = [
   {
@@ -73,31 +72,31 @@ export default function BlogPage() {
   };
 
   return (
-    <div className="blogPage">
-      <div className="heroSection">
-        <h2>Discover Our Latest Insights</h2>
-        <p>Discover rich and aromatic stories about coffee culture, brewing techniques, and bean-to-cup journeys.</p>
+    <div className="py-16 px-20 font-sans bg-white">
+      <div className="w-full h-80 bg-blog-hero bg-cover bg-center text-gray-100 text-center py-16 px-5 mt-24">
+        <h2 className="text-4xl font-bold">Discover Our Latest Insights</h2>
+        <p className="text-lg mt-3">Discover rich and aromatic stories about coffee culture, brewing techniques, and bean-to-cup journeys.</p>
       </div>
 
      
-      <h1 className="blogHeader">Recent blog posts</h1>
-      <div className="blogGrid">
+      <h1 className="text-3xl font-bold mb-10 mt-20">Recent blog posts</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {blogData.map((blog, index) => (
-          <div key={index} className="blogCard">
-            <div className="blogImage">
-              <img src={blog.image} alt={blog.title} />
+          <div key={index} className="bg-gray-50 rounded-xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-2xl">
+            <div className="w-full h-48 bg-gray-300">
+              <img src={blog.image} alt={blog.title} className="w-full h-full object-cover" />
             </div>
-            <div className="blogDetails">
-              <h3>{blog.title}</h3>
-              <p className="desc">{blog.description}</p>
-              <div className="author">
+            <div className="p-5">
+              <h3 className="my-0 mb-3 text-lg font-semibold">{blog.title}</h3>
+              <p className="text-sm text-gray-600 mb-3">{blog.description}</p>
+              <div className="text-xs text-gray-500">
                 <span>{blog.author}</span> • <span>{blog.date}</span>
               </div>
             
-              <div className="readMore" onClick={() => toggleReadMore(index)}>
+              <div className="text-orange-500 cursor-pointer font-semibold mt-3 hover:underline" onClick={() => toggleReadMore(index)}>
                 {expandedBlogIndex === index ? "Read Less" : "Read More"}
               </div>
-              {expandedBlogIndex === index && <p>{blog.fullContent}</p>}
+              {expandedBlogIndex === index && <p className="mt-3 text-sm text-gray-700">{blog.fullContent}</p>}
             </div>
           </div>
         ))}

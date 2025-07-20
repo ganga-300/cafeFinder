@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './FAQs.css';
 
 const faqData = [
   {
@@ -28,20 +27,20 @@ function FAQs() {
   };
 
   return (
-    <div className="faq-section">
-      <h2 className="faq-title">Frequently Asked Questions</h2>
-      <div className="faq-container">
+    <div className="py-16 px-10 bg-orange-100 max-w-4xl mx-auto font-sans">
+      <h2 className="text-3xl text-amber-900 text-center mb-10">Frequently Asked Questions</h2>
+      <div className="flex flex-col gap-4">
         {faqData.map((item, index) => (
           <div
-            className={`faq-item ${activeIndex === index ? 'active' : ''}`}
+            className={`bg-white rounded-xl shadow-lg py-5 px-6 cursor-pointer transition-all duration-300`}
             key={index}
             onClick={() => toggleAccordion(index)}
           >
-            <div className="faq-header">
-              <span className="faq-question">{item.question}</span>
-              <span className={`faq-icon ${activeIndex === index ? 'rotate' : ''}`}>&#9660;</span>
+            <div className="flex justify-between items-center">
+              <span className="text-lg font-semibold text-gray-800">{item.question}</span>
+              <span className={`text-xs transition-transform duration-300 text-amber-900 ${activeIndex === index ? 'rotate-180' : ''}`}>&#9660;</span>
             </div>
-            <div className="faq-answer">{item.answer}</div>
+            <div className={`text-base text-gray-600 mt-3 transition-all duration-300 ${activeIndex === index ? 'max-h-52 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>{item.answer}</div>
           </div>
         ))}
       </div>

@@ -1,6 +1,5 @@
 
 import { useState } from "react"
-import "./Booking.css"
 
 const Booking = () => {
   const [formData, setFormData] = useState({
@@ -110,42 +109,42 @@ const Booking = () => {
 
   if (showConfirmation) {
     return (
-      <div className="booking-container">
-        <div className="confirmation-card">
-          <div className="confirmation-icon">✓</div>
-          <h2>Booking Confirmed!</h2>
-          <div className="booking-details">
+      <div className="max-w-2xl mx-auto my-8 px-4 font-sans mt-24">
+        <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl py-12 px-10 text-center shadow-2xl border border-green-100">
+          <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-green-800 rounded-full flex items-center justify-center text-4xl text-white mx-auto mb-6 animate-pulse">✓</div>
+          <h2 className="text-green-800 text-3xl mb-8 font-semibold">Booking Confirmed!</h2>
+          <div className="bg-green-50 rounded-xl p-6 mb-8 text-left border border-green-200">
             <p>
-              <strong>Date:</strong> {new Date(formData.date).toLocaleDateString()}
+              <strong className="text-green-800 font-semibold">Date:</strong> {new Date(formData.date).toLocaleDateString()}
             </p>
             <p>
-              <strong>Time:</strong> {timeSlots.find((slot) => slot.value === formData.time)?.label}
+              <strong className="text-green-800 font-semibold">Time:</strong> {timeSlots.find((slot) => slot.value === formData.time)?.label}
             </p>
             <p>
-              <strong>Guests:</strong> {formData.guests} people
+              <strong className="text-green-800 font-semibold">Guests:</strong> {formData.guests} people
             </p>
             <p>
-              <strong>Name:</strong> {formData.name}
+              <strong className="text-green-800 font-semibold">Name:</strong> {formData.name}
             </p>
             <p>
-              <strong>Phone:</strong> {formData.phone}
+              <strong className="text-green-800 font-semibold">Phone:</strong> {formData.phone}
             </p>
             {formData.tablePreference && (
               <p>
-                <strong>Table:</strong> {formData.tablePreference}
+                <strong className="text-green-800 font-semibold">Table:</strong> {formData.tablePreference}
               </p>
             )}
             {formData.specialRequests && (
               <p>
-                <strong>Special Requests:</strong> {formData.specialRequests}
+                <strong className="text-green-800 font-semibold">Special Requests:</strong> {formData.specialRequests}
               </p>
             )}
           </div>
-          <div className="confirmation-actions">
-            <button onClick={addToCalendar} className="calendar-btn">
+          <div className="flex gap-4 justify-center flex-wrap">
+            <button onClick={addToCalendar} className="py-3 px-6 rounded-xl text-base font-medium cursor-pointer transition-all duration-300 border-none bg-gradient-to-br from-green-600 to-green-800 text-white hover:-translate-y-1 hover:shadow-lg">
               📅 Add to Calendar
             </button>
-            <button onClick={resetForm} className="new-booking-btn">
+            <button onClick={resetForm} className="py-3 px-6 rounded-xl text-base font-medium cursor-pointer transition-all duration-300 bg-white text-green-800 border-2 border-green-200 hover:-translate-y-1 hover:shadow-lg">
               New Booking
             </button>
           </div>
@@ -155,17 +154,17 @@ const Booking = () => {
   }
 
   return (
-    <div className="booking-container">
-      <div className="booking-card">
-        <div className="booking-header">
-          <h2>Reserve Your Table</h2>
-          <p>Book your perfect spot for a delightful coffee experience</p>
+    <div className="max-w-2xl mx-auto my-8 px-4 font-sans mt-24">
+      <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl py-10 px-10 shadow-2xl border border-green-100">
+        <div className="text-center mb-8">
+          <h2 className="text-green-800 text-3xl font-semibold mb-2 tracking-tight">Reserve Your Table</h2>
+          <p className="text-green-700 text-base m-0">Book your perfect spot for a delightful coffee experience</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="booking-form">
-          <div className="form-row">
-            <div className="form-group">
-              <label htmlFor="date">Select Date</label>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="flex flex-col">
+              <label htmlFor="date" className="text-green-800 font-medium mb-2 text-sm">Select Date</label>
               <input
                 type="date"
                 id="date"
@@ -173,19 +172,19 @@ const Booking = () => {
                 value={formData.date}
                 onChange={handleInputChange}
                 min={new Date().toISOString().split("T")[0]}
-                className={errors.date ? "error" : ""}
+                className={`py-3 px-4 border-2 ${errors.date ? 'border-red-500 bg-red-50' : 'border-green-200'} rounded-xl text-base transition-all duration-300 bg-gray-50 text-gray-800 focus:outline-none focus:border-green-600 focus:shadow-lg focus:bg-white`}
               />
-              {errors.date && <span className="error-text">{errors.date}</span>}
+              {errors.date && <span className="text-red-500 text-xs mt-1">{errors.date}</span>}
             </div>
 
-            <div className="form-group">
-              <label htmlFor="time">Select Time</label>
+            <div className="flex flex-col">
+              <label htmlFor="time" className="text-green-800 font-medium mb-2 text-sm">Select Time</label>
               <select
                 id="time"
                 name="time"
                 value={formData.time}
                 onChange={handleInputChange}
-                className={errors.time ? "error" : ""}
+                className={`py-3 px-4 border-2 ${errors.time ? 'border-red-500 bg-red-50' : 'border-green-200'} rounded-xl text-base transition-all duration-300 bg-gray-50 text-gray-800 focus:outline-none focus:border-green-600 focus:shadow-lg focus:bg-white`}
               >
                 <option value="">Choose time</option>
                 {timeSlots.map((slot) => (
@@ -194,14 +193,14 @@ const Booking = () => {
                   </option>
                 ))}
               </select>
-              {errors.time && <span className="error-text">{errors.time}</span>}
+              {errors.time && <span className="text-red-500 text-xs mt-1">{errors.time}</span>}
             </div>
           </div>
 
-          <div className="form-row">
-            <div className="form-group">
-              <label htmlFor="guests">Number of Guests</label>
-              <select id="guests" name="guests" value={formData.guests} onChange={handleInputChange}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="flex flex-col">
+              <label htmlFor="guests" className="text-green-800 font-medium mb-2 text-sm">Number of Guests</label>
+              <select id="guests" name="guests" value={formData.guests} onChange={handleInputChange} className="py-3 px-4 border-2 border-green-200 rounded-xl text-base transition-all duration-300 bg-gray-50 text-gray-800 focus:outline-none focus:border-green-600 focus:shadow-lg focus:bg-white">
                 {[...Array(10)].map((_, i) => (
                   <option key={i + 1} value={i + 1}>
                     {i + 1} {i === 0 ? "person" : "people"}
@@ -210,13 +209,14 @@ const Booking = () => {
               </select>
             </div>
 
-            <div className="form-group">
-              <label htmlFor="tablePreference">Table Preference</label>
+            <div className="flex flex-col">
+              <label htmlFor="tablePreference" className="text-green-800 font-medium mb-2 text-sm">Table Preference</label>
               <select
                 id="tablePreference"
                 name="tablePreference"
                 value={formData.tablePreference}
                 onChange={handleInputChange}
+                className="py-3 px-4 border-2 border-green-200 rounded-xl text-base transition-all duration-300 bg-gray-50 text-gray-800 focus:outline-none focus:border-green-600 focus:shadow-lg focus:bg-white"
               >
                 <option value="">No preference</option>
                 <option value="Indoor">Indoor</option>
@@ -227,9 +227,9 @@ const Booking = () => {
             </div>
           </div>
 
-          <div className="form-row">
-            <div className="form-group">
-              <label htmlFor="name">Full Name</label>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="flex flex-col">
+              <label htmlFor="name" className="text-green-800 font-medium mb-2 text-sm">Full Name</label>
               <input
                 type="text"
                 id="name"
@@ -237,13 +237,13 @@ const Booking = () => {
                 value={formData.name}
                 onChange={handleInputChange}
                 placeholder="Enter your name"
-                className={errors.name ? "error" : ""}
+                className={`py-3 px-4 border-2 ${errors.name ? 'border-red-500 bg-red-50' : 'border-green-200'} rounded-xl text-base transition-all duration-300 bg-gray-50 text-gray-800 placeholder-green-400 focus:outline-none focus:border-green-600 focus:shadow-lg focus:bg-white`}
               />
-              {errors.name && <span className="error-text">{errors.name}</span>}
+              {errors.name && <span className="text-red-500 text-xs mt-1">{errors.name}</span>}
             </div>
 
-            <div className="form-group">
-              <label htmlFor="phone">Phone Number</label>
+            <div className="flex flex-col">
+              <label htmlFor="phone" className="text-green-800 font-medium mb-2 text-sm">Phone Number</label>
               <input
                 type="tel"
                 id="phone"
@@ -251,14 +251,14 @@ const Booking = () => {
                 value={formData.phone}
                 onChange={handleInputChange}
                 placeholder="Enter your phone"
-                className={errors.phone ? "error" : ""}
+                className={`py-3 px-4 border-2 ${errors.phone ? 'border-red-500 bg-red-50' : 'border-green-200'} rounded-xl text-base transition-all duration-300 bg-gray-50 text-gray-800 placeholder-green-400 focus:outline-none focus:border-green-600 focus:shadow-lg focus:bg-white`}
               />
-              {errors.phone && <span className="error-text">{errors.phone}</span>}
+              {errors.phone && <span className="text-red-500 text-xs mt-1">{errors.phone}</span>}
             </div>
           </div>
 
-          <div className="form-group full-width">
-            <label htmlFor="email">Email Address</label>
+          <div className="flex flex-col">
+            <label htmlFor="email" className="text-green-800 font-medium mb-2 text-sm">Email Address</label>
             <input
               type="email"
               id="email"
@@ -266,13 +266,13 @@ const Booking = () => {
               value={formData.email}
               onChange={handleInputChange}
               placeholder="Enter your email"
-              className={errors.email ? "error" : ""}
+              className={`py-3 px-4 border-2 ${errors.email ? 'border-red-500 bg-red-50' : 'border-green-200'} rounded-xl text-base transition-all duration-300 bg-gray-50 text-gray-800 placeholder-green-400 focus:outline-none focus:border-green-600 focus:shadow-lg focus:bg-white`}
             />
-            {errors.email && <span className="error-text">{errors.email}</span>}
+            {errors.email && <span className="text-red-500 text-xs mt-1">{errors.email}</span>}
           </div>
 
-          <div className="form-group full-width">
-            <label htmlFor="specialRequests">Special Requests</label>
+          <div className="flex flex-col">
+            <label htmlFor="specialRequests" className="text-green-800 font-medium mb-2 text-sm">Special Requests</label>
             <textarea
               id="specialRequests"
               name="specialRequests"
@@ -280,10 +280,11 @@ const Booking = () => {
               onChange={handleInputChange}
               placeholder="Any special requests? (e.g., Need baby chair, Celebrating birthday, etc.)"
               rows="3"
+              className="py-3 px-4 border-2 border-green-200 rounded-xl text-base transition-all duration-300 bg-gray-50 text-gray-800 placeholder-green-400 focus:outline-none focus:border-green-600 focus:shadow-lg focus:bg-white"
             />
           </div>
 
-          <button type="submit" className="confirm-btn">
+          <button type="submit" className="bg-gradient-to-br from-green-600 to-green-800 text-white border-none py-4 px-8 rounded-xl text-lg font-semibold cursor-pointer transition-all duration-300 mt-4 tracking-wide hover:-translate-y-1 hover:shadow-2xl active:translate-y-0">
             Confirm Booking
           </button>
         </form>
