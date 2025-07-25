@@ -1,4 +1,4 @@
-// File: /Users/jivitrana/Desktop/Ganga/cafeFinder/app/about/page.js
+// File: /Users/gangaraghuwanshi/Downloads/cafeFinder 2/app/about/page.js
 import * as entry from '../../../../app/about/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
